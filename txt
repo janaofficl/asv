@@ -1,0 +1,56 @@
+<?php
+
+ $emailid=$_POST['emailid'];
+ $password=$_POST['password'];
+
+ $conn = new mysqli('localhost','root','','one');
+ $sql = "SELECT * FROM signup WHERE emailid='$emailid'";
+ $result = mysqli_query($conn,$sql);
+ $user = mysqli_fetch_array($result,MYSQLI_ASSOC);
+ if($user){
+   if(password_verify($password,$user["password"])){
+      header("Location : index.html");
+      die();
+   }
+   else{
+      die("Password doesn't match.");
+   }
+ }
+ if($conn->connect_error){
+    die('connection failed:'.$conn->connect_error);
+ }else{
+    $stmt= $conn->prepare("insert into signup(emailid,password)values(?,?)");
+    $stmt->bind_param("ss",$emailid,$password);
+    $stmt->execute();
+    $stmt->close();
+    $conn->close();
+ }
+?>
+
+
+
+
+<?php
+   $hostname ="localhost";
+   $dbuser ="root";
+   $dbpassword="";
+   $dbname ="one";
+   $conn =mysqli_connect($hostname,$dbuser,$dbpassword,$dbname);
+      $emailid = $_POST["emailid"];
+      $password = $_POST["password"];
+      $sql = "SELECT * FROM signup WHERE emailid='$emailid'";
+      $result = mysqli_query($conn,$sql);
+      $user = mysqli_fetch_array($result,MYSQLI_ASSOC);
+      if($user){
+         if(password_verify($password,$user["password"])){
+            header("Location:index.html");
+            die();
+         }
+         else{
+            die("Password doesn't match.");
+         }
+      }
+      if(!$conn){
+         die("something went wrong");
+      }
+?>

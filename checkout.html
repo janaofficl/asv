@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cart</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="icon" href="a.png" type="image">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&family=Playwrite+BE+VLG&family=Poppins&family=Source+Code+Pro:ital,wght@0,200..900;1,200..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="cart.css">
+    <link rel="stylesheet" href="cartmain.css">
+</head>
+<body>
+    <header class="header">
+        <div class="navbar">
+            <div class="left-section">
+                <a href="index.html" class="av">AV</a>
+                <a href="index.html"><h1 class="h1">Aspiring voyage</h1>
+            </div>
+            <div class="middle-sec">
+                Checkout <a href="index.html" class="return-link">(2 items)</a>
+            </div>
+            <div class="right-sec">
+                <img src="checkout-lock-icon.png" alt="">
+            </div>
+        </div>
+    </header>
+    <main class="main">
+        <div class="page-title">Review your Order</div>
+        <div class="cartgrid">
+            <div class="order-summary js-order-summary">
+            </div>
+            <div class="payment-sum">
+                <div class="payment-title">Order Summary</div>
+                <div class="payment-row">
+                    <div>Item (3):</div>
+                    <div class="payment-money">$42.65</div>
+                </div>
+                <div class="payment-row">
+                    <div>Shipping &amp; handling:</div>
+                    <div class="payment-money">$5.76</div>
+                </div>
+                <div class="payment-row">
+                    <div>Estimated Tax:</div>
+                    <div class="payment-money">$2.11</div>
+                </div>
+                <div class="payment-row total">
+                    <div>Order total:</div>
+                    <div class="payment-money">$47.76</div>
+                </div>
+                <button class="order-btn buttonp">Place your order</button>
+            </div>
+        </div>
+        </div>
+    </main>
+    <script src="https://unpkg.com/dayjs@1.11.10/dayjs.min.js"></script>
+    <script type="module" src="checkout.js"></script>
+</body>
+</html>
+ 

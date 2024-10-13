@@ -1,0 +1,24 @@
+$sqll = "SELECT * FROM info WHERE email = '$email'";
+    $result = mysqli_query($conn,$sqll);
+    $rowcount = mysqli_num_rows($result);
+    if($rowcount>0)
+    {
+        die("This email is already exist...");
+    }
+
+
+    $firstname = $_POST['firstname'];
+$lastname = $_POST['lastname'];
+$phoneno = $_POST['phoneno'];
+$email = $_POST['email'];
+$password = $_POST['password']; 
+
+// SQL query to insert data
+$sql = "INSERT INTO info (firstname,lastname, phoneno, email, password) VALUES ('$firstname', '$lastname','$phoneno','$email', '$hasedpassword')";
+$sqll = "SELECT * FROM info WHERE email = '$email'";
+    $result = mysqli_query($conn,$sqll);
+    $rowcount = mysqli_num_rows($result);
+    if($rowcount>0)
+    {
+        die("This email is already exist...");
+    }
