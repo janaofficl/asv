@@ -18,4 +18,3 @@ document.getElementById('searchBar').addEventListener('keyup', function() {
 }); 
 
 
-
